@@ -148,7 +148,7 @@ typedef void (^SecKeyPerformBlock)(SecKeyRef key);
         encryptor(self.publicKeyRef);
     }
 
-    return [cipherText base64EncodedStringWithOptions:NSDataBase64Encoding64CharacterLineLength];
+    return [cipherText base64EncodedStringWithOptions:0];
 }
 
 - (NSString *)decrypt:(NSString *)encodedMessage {
