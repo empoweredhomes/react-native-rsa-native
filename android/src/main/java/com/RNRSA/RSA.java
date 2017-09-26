@@ -104,7 +104,7 @@ public class RSA {
         final Cipher cipher = Cipher.getInstance("RSA/NONE/PKCS1Padding");
         cipher.init(Cipher.ENCRYPT_MODE, this.publicKey);
         byte[] data = cipher.doFinal(message.getBytes(UTF_8));
-        encodedMessage = Base64.encodeToString(data, Base64.DEFAULT);
+        encodedMessage = Base64.encodeToString(data, Base64.NO_WRAP);
 
         return encodedMessage;
     }
