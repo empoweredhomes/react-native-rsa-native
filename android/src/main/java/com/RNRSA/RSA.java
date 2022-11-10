@@ -146,7 +146,7 @@ public class RSA {
     public String encrypt(String message) throws NoSuchAlgorithmException, InvalidKeySpecException, IllegalBlockSizeException, BadPaddingException, NoSuchPaddingException, InvalidKeyException {
         byte[] data = message.getBytes(CharsetUTF_8);
         byte[] cipherBytes = encrypt(data);
-        return Base64.encodeToString(cipherBytes, Base64.DEFAULT);
+        return Base64.encodeToString(cipherBytes, Base64.NOWRAP);
     }
 
     private byte[] decrypt(byte[] cipherBytes) throws NoSuchAlgorithmException, InvalidKeySpecException, IllegalBlockSizeException, BadPaddingException, NoSuchPaddingException, InvalidKeyException {
@@ -275,7 +275,7 @@ public class RSA {
         KeyStore keyStore = KeyStore.getInstance("AndroidKeyStore");
         keyStore.load(null);
         KeyStore.PrivateKeyEntry privateKeyEntry = (KeyStore.PrivateKeyEntry) keyStore.getEntry(this.keyTag, null);
-        
+
         if (privateKeyEntry != null) {
             this.privateKey = privateKeyEntry.getPrivateKey();
             this.publicKey = privateKeyEntry.getCertificate().getPublicKey();
@@ -401,4 +401,3 @@ public class RSA {
     }
 
 }
-
