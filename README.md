@@ -1,7 +1,5 @@
-# Looking for maintainers
-This project needs new maintainers, PRs also welcome
+# react-native-rsa-native - Internal
 
-# react-native-rsa-native
 
 A native implementation of RSA key generation and encryption/decryption, sign/verify.
 Keychain implementation
